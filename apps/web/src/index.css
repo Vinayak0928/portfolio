@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Newsreader", Georgia, serif;
+    overflow-x: clip;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+/*
+  ---break---
+*/
+
+@layer base {
+    :root {
+        --background: 45 30% 97%;
+        --foreground: 20 10% 7%;
+        --card: 0 0% 100%;
+        --card-foreground: 20 10% 7%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 10% 7%;
+        --primary: 20 10% 7%;
+        --primary-foreground: 45 30% 97%;
+        --secondary: 40 12% 92%;
+        --secondary-foreground: 20 10% 7%;
+        --muted: 40 12% 92%;
+        --muted-foreground: 25 6% 38%;
+        --accent: 40 12% 92%;
+        --accent-foreground: 20 10% 7%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 25 8% 84%;
+        --input: 25 8% 84%;
+        --ring: 7 81% 53%;
+        --signal: 7 81% 53%;
+        --radius: 0.25rem;
+        --sidebar-background: 45 30% 97%;
+        --sidebar-foreground: 25 6% 38%;
+        --sidebar-primary: 20 10% 7%;
+        --sidebar-primary-foreground: 45 30% 97%;
+        --sidebar-accent: 40 12% 92%;
+        --sidebar-accent-foreground: 20 10% 7%;
+        --sidebar-border: 25 8% 84%;
+        --sidebar-ring: 7 81% 53%;
+    }
+
+    .dark {
+        --background: 20 10% 7%;
+        --foreground: 45 30% 97%;
+        --card: 20 10% 7%;
+        --card-foreground: 45 30% 97%;
+        --popover: 20 10% 7%;
+        --popover-foreground: 45 30% 97%;
+        --primary: 45 30% 97%;
+        --primary-foreground: 20 10% 7%;
+        --secondary: 25 6% 16%;
+        --secondary-foreground: 45 30% 97%;
+        --muted: 25 6% 16%;
+        --muted-foreground: 30 6% 65%;
+        --accent: 25 6% 16%;
+        --accent-foreground: 45 30% 97%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 25 6% 16%;
+        --input: 25 6% 16%;
+        --ring: 7 81% 60%;
+        --signal: 7 81% 56%;
+        --sidebar-background: 20 10% 7%;
+        --sidebar-foreground: 45 30% 97%;
+        --sidebar-primary: 7 81% 53%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 25 6% 16%;
+        --sidebar-accent-foreground: 45 30% 97%;
+        --sidebar-border: 25 6% 16%;
+        --sidebar-ring: 7 81% 60%;
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: "Archivo", sans-serif;
+        font-stretch: 125%;
+    }
+
+    .font-serif-body {
+        font-family: "Newsreader", Georgia, serif;
+    }
+
+    .text-signal {
+        color: hsl(var(--signal));
+    }
+
+    .bg-signal {
+        background-color: hsl(var(--signal));
+    }
+
+    .border-signal {
+        border-color: hsl(var(--signal));
+    }
+
+    /* Translucent layered panel with inner border — no blur */
+    .panel {
+        background: hsl(0 0% 100% / 0.55);
+        border: 1px solid hsl(var(--foreground) / 0.14);
+        box-shadow:
+            inset 0 0 0 1px hsl(0 0% 100% / 0.65),
+            0 32px 56px -40px hsl(var(--foreground) / 0.35);
+    }
+
+    .panel-dark {
+        background: hsl(20 10% 10% / 0.55);
+        border: 1px solid hsl(45 30% 97% / 0.16);
+        box-shadow:
+            inset 0 0 0 1px hsl(45 30% 97% / 0.06),
+            0 32px 56px -40px hsl(0 0% 0% / 0.6);
+    }
+
+    /* Marker highlight stroke for key phrases */
+    .marker {
+        background-image: linear-gradient(to top,
+                hsl(var(--signal) / 0.32) 0.28em,
+                transparent 0.28em);
+    }
+
+    .marker-underline {
+        background-image: linear-gradient(to top,
+                hsl(var(--signal)) 0.09em,
+                transparent 0.09em);
+    }
+}
